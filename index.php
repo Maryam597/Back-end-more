@@ -192,9 +192,20 @@ session_start();
         $n = 0;
 
         foreach ($_SESSION['table'] as $key => $value) {
+          if ($key != 'img') {
+            echo 'à la ligne n°' . $n++ . ' ' . 'correspond la clé' . ' ' . '"' . $key . '"' . ' ' . 'et contient' . ' ' . '"' . $value . '"' . "<br>";
+          }
+          else {
+            // echo '<img src="./uploaded/' . $value["name"] . " 'alt="image" . >';
+
+            echo "à la ligne n°" . $n++ . " correspond la clé " . $key . " et contient <br>";
+
+            echo "<img class='mw-100' src='./uploaded/" . $value['name'] . "' alt='Image " . $value['name'] . "'><br><br>";
 
 
-          echo 'à la ligne n°' . $n++ . ' ' . 'correspond la clé' . ' ' . '"' . $key . '"' . ' ' . 'et contient' . ' ' . '"' . $value . '"' . "<br>";
+          }
+
+
         }
       }
 
@@ -219,7 +230,7 @@ session_start();
         session_destroy();
       } elseif (isset($_POST['form2']))
 
-        //         if(isset($_POST['submit'])) //to run PHP script on submit
+        // if(isset($_POST['submit'])) //to run PHP script on submit
         // {   
         // if(!empty($_POST['check_list'])){
         // // Loop to store and display values of individual checked checkbox.
