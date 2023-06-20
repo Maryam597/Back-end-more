@@ -1,0 +1,63 @@
+<form id="form" action="./index.php" method="POST" class="card col-md-7 mx-auto my-1;">
+ 
+    
+    <div class="form-floating mb-3 mt-3">
+        <input  type="text" name="firstname" placeholder="Prénom" />
+
+
+    </div>
+
+    <br>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="lastname" placeholder="Nom" />
+    </div>
+
+
+    <br>
+
+    <div class="form-group">
+        <label for="age">Age (18 à 70 ans)</label>
+        <input type="number" name="age" min="18" max="60" value="Renseignez votre age"
+        placeholder="Renseignez votre age" class="form-control" id="age"/>
+    </div>
+
+  
+
+
+    <br>
+
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+        <label for="height" class="input-group-text">Taille (1,26m à 3m)</label>
+    </div>
+
+        <input type="number" class="form-control" name="height"  min="1.26" max="3.00" step="0.01" placeholder="Renseignez votre age" />
+    <div class="input-group-append">
+        <span class="input-group-text">m</span>
+      </div>
+</div>
+
+
+    <br>
+
+    <div class="d-flex mb-3" >
+        <input class="form-check-label" type="radio" name="gender" value="Homme">Homme
+        <input class="form-check-label" type="radio" name="gender" value="Femme">Femme
+    </div>
+
+    <br>
+
+    <div class="text-right ml-6">
+        <input class="btn btn-primary"  type="submit" value="Enregistrer" name="form" />
+        
+
+    </div>
+</form>
+
+<br>
+
+
+
+
+
