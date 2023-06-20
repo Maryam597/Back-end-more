@@ -1,3 +1,4 @@
+
 <?php include './includes/form.html'; ?>
 
 
@@ -43,6 +44,13 @@
 <div class="card col-11 mx-auto my-1">
 
 <label for="picture"> Joindre une image (jpg ou png) </label>
+
+<div action="index.php" method="POST" enctype="multipart/form-data">
+        <label for="file">Parcourir</label>
+        <input type="file" name="file">
+        <!-- <button type="submit">Enregistrer</button> -->
+
+</div>
 
 </div>
 
