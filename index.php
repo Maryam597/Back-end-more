@@ -203,9 +203,10 @@ session_start();
         echo '<h3> ===> Affichage d\'une virgule à la place du point pour la taille </h3>';
 
 
-        // str_replace(',', '.', ['table']['height']);
+        echo ('<p>' . 'M.' . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
 
 
+        echo '<p>' . ' J\'ai' . ' ' . $_SESSION['table']['age'] . ' ' . 'ans et je mesure' . ' ' .         str_replace(',', '.',  $_SESSION['table']['height']) . ' ' . 'mètre.';
 
 
 
