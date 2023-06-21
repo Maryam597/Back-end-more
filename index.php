@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 
@@ -109,7 +108,7 @@ session_start();
         }
 
 
-        if (isset($_FILES)) {
+        if (isset($_FILES['file'])) {
           var_dump($_FILES);
           $tmpName = $_FILES['file']['tmp_name'];
           $type = $_FILES['file']['type'];
@@ -169,7 +168,30 @@ session_start();
       if (isset($_GET['concatenation'])) {
 
 
-        echo '<h2> Concaténation </h2>';
+        $tab = $_SESSION['table'];
+        function gender($tab){
+          if ($tab['gender'] === 'Homme'){
+            echo 'M.';
+          }
+          else{
+            echo 'Mme';
+          }
+        }
+
+        echo '<h2> Concaténation </h2> <br>
+
+        <h3> ===> Construction d\'une phrase avec le contenu du tableau </h3>';
+
+
+        echo ('<p>' . 'M.' . ' ' . ($_SESSION['table']['firstname']) . ' ' . ($_SESSION['table']['lastname']));
+
+
+        echo '<p>' . ' J\'ai' . ' ' . $_SESSION['table']['age'] . ' ' . 'ans et je mesure' . ' ' . $_SESSION['table']['height'] . ' ' . 'mètre.';
+
+
+       echo '<h3> ===> Construction d\'une phrase après MAJ du tableau </h3>';
+
+
 
         echo ('<p>' . 'M.' . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
 
@@ -178,7 +200,13 @@ session_start();
 
 
 
+        echo '<h3> ===> Affichage d\'une virgule à la place du point pour la taille </h3>';
+
+
         // str_replace(',', '.', ['table']['height']);
+
+
+
 
 
       }
