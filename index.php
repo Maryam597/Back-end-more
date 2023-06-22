@@ -128,7 +128,9 @@ session_start();
           if (in_array($extension, $extensions) && $size <= $maxSize) { // vérification taille et extension
             move_uploaded_file($tmpName, './uploaded/' . $name); // stocker image dans un dossier
           } else {
-            echo "Mauvaise extension ou taille trop grande";
+
+            echo '<div class="alert alert-danger" role="alert"> Mauvaise extension ou mauvaise taille d\'image</div>';
+
           }
           $table['img'] = array( //création d'un tableau dans un tableau
             'tmp_name' => $tmpName, // clé
@@ -146,7 +148,8 @@ session_start();
 
 
         $_SESSION['table'] = $table;
-        echo '<h3>Données sauvegardées</h3>';
+        echo '<div class="alert alert-dismissible alert-success">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button><p class="text-align:center;"> Données sauvegardées <p>';
       } elseif (isset($_SESSION['table'])) {
 
 
@@ -160,58 +163,6 @@ session_start();
         echo '</pre>';
       }
 
-
-
-
-
-
-      // if (isset($_GET['concatenation'])) {
-
-
-    
-      //     if ($table['gender'] === 'Homme'){
-      //       echo 'M.';
-      //     }
-      //     else{
-      //       echo 'Mme';
-      //     }
-      
-
-       
-
-
-      //   echo '<h2> Concaténation </h2> <br>
-
-      //   <h3> ===> Construction d\'une phrase avec le contenu du tableau </h3>';
-
-
-      //   echo ('<p>' . ($table['gender'] === 'Homme' ? 'M.' : 'Mme') . ' ' . ucfirst($table['firstname']) . ' ' . strtoupper($table['lastname']));
-
-      //   echo '<p>' . ' J\'ai' . ' ' . $_SESSION['table']['age'] . ' ' . 'ans et je mesure' . ' ' . $_SESSION['table']['height'] . ' ' . 'mètre.';
-
-
-      //  echo '<h3> ===> Construction d\'une phrase après MAJ du tableau </h3>';
-
-
-
-      //   echo ('<p>' . $tab . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
-
-
-      //   echo '<p>' . ' J\'ai' . ' ' . $_SESSION['table']['age'] . ' ' . 'ans et je mesure' . ' ' . $_SESSION['table']['height'] . ' ' . 'mètre.';
-
-
-
-      //   echo '<h3> ===> Affichage d\'une virgule à la place du point pour la taille </h3>';
-
-
-      //   echo ('<p>' . 'M.' . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
-
-
-      //   echo '<p>' . ' J\'ai' . ' ' . $_SESSION['table']['age'] . ' ' . 'ans et je mesure' . ' ' .         str_replace('.', ',',  $_SESSION['table']['height']) . ' ' . 'mètre.';
-
-
-
-      // }
 
 
 
@@ -282,15 +233,7 @@ session_start();
         session_destroy();
       } elseif (isset($_POST['form2']))
 
-        // if(isset($_POST['submit'])) //to run PHP script on submit
-        // {   
-        // if(!empty($_POST['check_list'])){
-        // // Loop to store and display values of individual checked checkbox.
-        // foreach($_POST['check_list'] as $selected){
-        // echo $selected."</br>";
-        // }
-        // }
-        // }
+    
 
       ?>
 
