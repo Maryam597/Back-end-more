@@ -109,7 +109,7 @@ session_start();
 
 
         if (isset($_FILES['file'])) {
-          var_dump($_FILES);
+          var_dump($_FILES); 
           $tmpName = $_FILES['file']['tmp_name'];
           $type = $_FILES['file']['type'];
           $name = $_FILES['file']['name'];
@@ -168,15 +168,19 @@ session_start();
       if (isset($_GET['concatenation'])) {
 
 
-        // $tab = $_SESSION['table'];
-        // function gender($tab){
-        //   if ($tab['gender'] === 'Homme'){
-        //     echo 'M.';
-        //   }
-        //   else{
-        //     echo 'Mme';
-        //   }
-        // }
+    
+          if ($tab['gender'] === 'Homme'){
+            echo 'M.';
+          }
+          else{
+            echo 'Mme';
+          }
+      
+
+       
+
+
+
 
         echo '<h2> Concaténation </h2> <br>
 
@@ -193,7 +197,7 @@ session_start();
 
 
 
-        echo ('<p>' . 'M.' . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
+        echo ('<p>' . $tab . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
 
 
         echo '<p>' . ' J\'ai' . ' ' . $_SESSION['table']['age'] . ' ' . 'ans et je mesure' . ' ' . $_SESSION['table']['height'] . ' ' . 'mètre.';
