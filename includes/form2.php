@@ -22,7 +22,7 @@
 
     <div class="form-group">
         <label for="age">Age (18 à 70 ans)</label>
-        <input type="number" name="age" min="18" max="60" value="Renseignez votre âge"
+        <input type="number" name="age" min="18" max="70" value="Renseignez votre âge"
         placeholder="Renseignez votre age" class="form-control" id="age"/>
     </div>
 

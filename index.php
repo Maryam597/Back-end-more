@@ -172,7 +172,7 @@ session_start();
         echo '<h2>Concaténation</h2>';
         echo '<h3>===> Construction d\'une phrase avec le contenu du tableau</h3>';
       
-        echo '<p>' . (($table['gender'] === 'Homme') ? 'M.' : 'Mme') . ' ' . ucfirst($table['firstname']) . ' ' . strtoupper($table['lastname']);
+        echo '<p>' . (($table['gender'] === 'Homme') ? 'M.' : 'Mme') . ' ' . ($table['firstname']) . ' ' . ($table['lastname']);
         echo '<p>' . 'J\'ai ' . $table['age'] . ' ans et je mesure ' . $table['height'] . ' mètre.';
       
         echo '<h3>===> Construction d\'une phrase après MAJ du tableau</h3>';
@@ -190,7 +190,7 @@ session_start();
       if (isset($_GET['loop'])) {
 
         echo '<h2>Boucle</h2>';
-        echo '<h3> = = => Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
+        echo '<h3> ===> Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
 
         $n = 0;
 
@@ -199,7 +199,6 @@ session_start();
             echo 'à la ligne n°' . $n++ . ' ' . 'correspond la clé' . ' ' . '"' . $key . '"' . ' ' . 'et contient' . ' ' . '"' . $value . '"' . "<br>";
           }
           else {
-            // echo '<img src="./uploaded/' . $value["name"] . " 'alt="image" . >';
 
             echo "à la ligne n°" . $n++ . " correspond la clé " . $key . " et contient <br>";
 
@@ -223,8 +222,20 @@ session_start();
           $n = 0;
           foreach ($_SESSION['table'] as $key => $value) {
 
+          
+          if ($key != 'img') {
             echo 'à la ligne n°' . $n++ . ' ' . 'correspond la clé' . ' ' . '"' . $key . '"' . ' ' . 'et contient' . ' ' . '"' . $value . '"' . "<br>";
           }
+          else {
+
+            echo "à la ligne n°" . $n++ . " correspond la clé " . $key . " et contient <br>";
+
+            echo "<img class='mw-100' src='./uploaded/" . $value['name'] . "' alt='Image " . $value['name'] . "'><br><br>";
+
+
+          }
+        }
+
         }
 
         readTable($table);
